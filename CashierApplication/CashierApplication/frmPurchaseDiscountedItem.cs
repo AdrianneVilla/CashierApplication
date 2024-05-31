@@ -15,6 +15,7 @@ namespace CashierApplication
         static DiscountItems Item;
         public frmPurchaseDiscountedItem()
         {
+          
             InitializeComponent();
         }
 
@@ -37,6 +38,20 @@ namespace CashierApplication
         {
             Item.setPayment (Convert.ToDouble(textBox6.Text));
             label2.Text = Item.getChange().ToString();
+        }
+
+        private void exitApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        Application.Exit();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLoginAccount frmLoginAccount = new frmLoginAccount();
+            frmLoginAccount.Show();
+
+            this.Close();
+            
         }
     }
 }
